@@ -1,15 +1,15 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
-# from flask_pymongo import PyMongo
-# from bson.objectid import ObjectId
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 
 app = Flask(__name__)
 
-# app.config["MONGO_DBNAME"] = 'recipesApp'
-# app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
+app.config["MONGO_DBNAME"] = 'recipesApp'
+app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
-# mongo = PyMongo(app)
+mongo = PyMongo(app)
 
 @app.route("/")
 def hello_test():
