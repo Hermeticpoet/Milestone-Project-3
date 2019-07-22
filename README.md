@@ -16,7 +16,9 @@ Optionally, you may choose to add basic user registration and authentication to 
 
 ## UX
 The User Interface is built with [Materialize]() framework to allow for responsiveness, while also creating an aesthetically pleasing experience for the users. 
-
+In today's world decision fatigue has become a real problem, therefore, with that in mind, I decided to limit to scope of the application menu and its
+search functionality. I chose six of large scale, well known cuisines for users to choose from, as well as, giving them a further breakdown of choice
+between course meals; breakfast, lunch, dinner, dessert and snacks. 
 ### Design Theme
 Ideas have been garnered from browsing online for other food recipe web applications.
 
@@ -55,6 +57,10 @@ The aim here was to separate the code into modules. This would allow for better 
 ### Comments
 
 ## Features Left to Implement
+As the range of available stock on the menu has been purposely limited so as to reduce decision fatigue for the users, I am also aware that a more wide
+ranging menu would be better suited to a larger audience. Therefore, more options should be added to the database but I would warn that this will reduce
+the scope of the original application that had a primary goal of reducing anxiety of choice around what should be the simple decision of finding a nice
+meal or snack to consume.
 
 ## Technologies Used
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
