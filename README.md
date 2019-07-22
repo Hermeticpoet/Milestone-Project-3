@@ -105,3 +105,4 @@ GIT was used throughout the development process for saving versions of my code b
 
 ## Credits
 ## Content & Media
+The images used throughout the application were collected from [Pexels.com](https://www.pexels.com/), a free to use site for various images.
