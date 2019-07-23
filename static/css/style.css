@@ -4,19 +4,10 @@ html, body {
     box-sizing: border-box;
 }
 
-/*.banner-image {*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*    width: 100vw;*/
-    /*height: 100vh;*/
-    /*z-index: -1;*/
-/*}*/
+body {
+    background: lightgreen;
+}
 
-/*.home-accoridan {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*}*/
 
 .footer {
     background-color: #ee6e73;
@@ -24,4 +15,5 @@ html, body {
 
 .footer .container {
     display: flex;
+    justify-content: space-around;
 }
