@@ -2,8 +2,8 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from flask_login import LoginManager
-from werkzeug.security import generate_password_hash, check_password_hash
+# from flask_login import LoginManager
+# from werkzeug.security import generate_password_hash, check_password_hash
 from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
@@ -28,13 +28,13 @@ def get_recipes():
 @app.route("/register")
 def register():
     form = RegistrationForm()
-    return render_template("register.html", title="Register" form=form)
+    return render_template("register.html", title="Register", form=form)
     
 
 @app.route("/login")
 def login():
     form = LoginForm()
-    return render_template("login.html", title="Login" form=form)
+    return render_template("login.html", title="Login", form=form)
     
 
 if __name__ == '__main__':
