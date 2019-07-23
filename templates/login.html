@@ -1,6 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Login</h1>
-    
+    <div class="container content-section">
+        <div class="row">
+            <form class="col s12" method="POST" action="">
+              
+                <!--cross site request forgery token to prevent form from attacks-->
+                
+                {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="input-field col s12">
+                  {{ form.email.label }}
+                  {{ form.email(class="validate") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  {{ form.password.label }}
+                  {{ form.password(class="validate") }}
+                </div>
+            </div>
+            <p>
+              <label>
+                <input type="checkbox" />
+                {{ form.remember }}
+              </label>
+            </p>
+            <div class="row">
+                <div class="input-field col s3">
+                    {{ form.submit(class="btn waves-effect") }}
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
 {% endblock %}
 
