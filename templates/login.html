@@ -20,12 +20,14 @@
                   {{ form.password(class="validate") }}
                 </div>
             </div>
-            <p>
-              <label>
-                <input type="checkbox" />
-                {{ form.remember }}
-              </label>
-            </p>
+            <div class="row">
+              <div class="col s12">
+                  <label>
+                    <input type="checkbox" />
+                    <span>{{ form.remember }}</span>
+                 </label>
+              </div>
+            </div>
             <div class="row">
                 <div class="input-field col s3">
                     {{ form.submit(class="btn waves-effect") }}
