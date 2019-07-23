@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Registration Form</h1>
+    <div class="container content-section">
+        <div class="row">
+            <form class="col s12" method="POST" action="">
+                <!--cross site request forgery token to prevent form from attacks-->
+                {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="input-field col s12">
+                  <!--<input placeholder="Placeholder" id="username" type="text" class="validate">-->
+                  <!--<label for="username">Username</label>-->
+                  {{ form.username.label(class="label") }}
+                  {{ form.username(class="form-input") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  <!--<input id="email" type="email" class="validate">-->
+                  <!--<label for="email">Email</label>-->
+                  {{ form.email.label(class="label") }}
+                  {{ form.email(class="form-input") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  <!--<input id="password" type="password" class="validate">-->
+                  <!--<label for="password">Password</label>-->
+                  {{ form.password.label(class="label") }}
+                  {{ form.password(class="form-input") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  <!--<input id="confirm_password" type="password" class="validate">-->
+                  <!--<label for="confirm_password">Confirm Password</label>-->
+                  {{ form.confirm_password.label(class="label") }}
+                  {{ form.confirm_password(class="form-input") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s3">
+                    {{ form.submit(class="btn waves-effect") }}
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class="reg-login">
+        <small class="text-muted">
+          Already Have An Account? <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+        </small>
+    </div>
+{% endblock %}
+
+
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Placeholder" id="username" type="text" class="validate">
+          <label for="username">Username</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="confirm_password" type="password" class="validate">
+          <label for="confirm_password">Confirm Password</label>
+        </div>
+      </div>
+    </form>
+  </div>
+        
