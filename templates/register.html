@@ -4,38 +4,71 @@
     <div class="container content-section">
         <div class="row">
             <form class="col s12" method="POST" action="">
+              
                 <!--cross site request forgery token to prevent form from attacks-->
+                
                 {{ form.hidden_tag() }}
             <div class="row">
                 <div class="input-field col s12">
-                  <!--<input placeholder="Placeholder" id="username" type="text" class="validate">-->
-                  <!--<label for="username">Username</label>-->
-                  {{ form.username.label(class="label") }}
-                  {{ form.username(class="form-input") }}
+                  {{ form.username.label }}
+                  
+                  <!--These if & for statements will print out to users any errors with their form validation-->
+                  
+                  {% if form.username.errors %}
+                    {{ form.username(class="validate") }}
+                    <div class="invalid-feedback">
+                      {% for error in form.username.errors %}
+                        <span>{{ error }}</span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.username(class="validate") }}
+                  {% endif %}
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                  <!--<input id="email" type="email" class="validate">-->
-                  <!--<label for="email">Email</label>-->
-                  {{ form.email.label(class="label") }}
-                  {{ form.email(class="form-input") }}
+                  {{ form.email.label }}
+                  {% if form.email.errors %}
+                    {{ form.email(class="validate") }}
+                    <div class="invalid-feedback">
+                      {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.email(class="validate") }}
+                  {% endif %}
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                  <!--<input id="password" type="password" class="validate">-->
-                  <!--<label for="password">Password</label>-->
-                  {{ form.password.label(class="label") }}
-                  {{ form.password(class="form-input") }}
+                  {{ form.password.label }}
+                  {% if form.password.errors %}
+                    {{ form.password(class="validate") }}
+                    <div class="invalid-feedback">
+                      {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.password(class="validate") }}
+                  {% endif %}
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                  <!--<input id="confirm_password" type="password" class="validate">-->
-                  <!--<label for="confirm_password">Confirm Password</label>-->
-                  {{ form.confirm_password.label(class="label") }}
-                  {{ form.confirm_password(class="form-input") }}
+                  {{ form.confirm_password.label }}
+                  {% if form.confirm_password.errors %}
+                    {{ form.confirm_password(class="validate") }}
+                    <div class="invalid-feedback">
+                      {% for error in form.confirm_password.errors %}
+                        <span>{{ error }}</span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.confirm_password(class="validate") }}
+                  {% endif %}
                 </div>
             </div>
             <div class="row">
