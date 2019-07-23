@@ -1,9 +1,7 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-# from flask_login import LoginManager
-# from werkzeug.security import generate_password_hash, check_password_hash
 from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
@@ -13,7 +11,6 @@ app.config["MONGO_DBNAME"] = 'recipesApp'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
 mongo = PyMongo(app)
-login = LoginManager(app)
 
 @app.route("/")
 @app.route("/index")
@@ -25,9 +22,13 @@ def get_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
     
 
-@app.route("/register")
+@app.route("/register", methods=["GET", "POST"])
 def register():
     form = RegistrationForm()
+    # Validate Form Entry
+    if form.validate_on_submit():
+        flash(f'Account created for { form.username.data }!')
+        return redirect(url_for('index'))
     return render_template("register.html", title="Register", form=form)
     
 

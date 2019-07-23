@@ -12,17 +12,17 @@
             <nav>
                 <div class="container">
                     <div class="nav-wrapper">
-                        <a href="#" class="brand-logo">What2Eat</a>
-                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <a href="{{ url_for('index') }}" class="brand-logo">What2Eat</a>
+                        <a href="{{ url_for('index') }}" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Register</a></li>
+                            <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li><a href="{{ url_for('login') }}">Login</a></li>
+                            <li><a href="{{ url_for('register') }}">Register</a></li>
                         </ul>
                         <ul class="side-nav" id="mobile-demo">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Register</a></li>
+                            <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li><a href="{{ url_for('login') }}">Login</a></li>
+                            <li><a href="{{ url_for('register') }}">Register</a></li>
                         </ul>
                     </div>
                 </div>
@@ -30,6 +30,15 @@
     </header>
     
     <div class="container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     {% block content %} {% endblock %}
     </div>
     <!--<div class="banner-image">-->
