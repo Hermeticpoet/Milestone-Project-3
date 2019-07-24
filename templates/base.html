@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <div class="overlay"></div>
     <header>
             <nav>
                 <div class="container">
@@ -16,11 +17,13 @@
                         <a href="{{ url_for('index') }}" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
                             <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
                             <li><a href="{{ url_for('login') }}">Login</a></li>
                             <li><a href="{{ url_for('register') }}">Register</a></li>
                         </ul>
                         <ul class="side-nav" id="mobile-demo">
                             <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
                             <li><a href="{{ url_for('login') }}">Login</a></li>
                             <li><a href="{{ url_for('register') }}">Register</a></li>
                         </ul>
@@ -41,13 +44,10 @@
     {% endwith %}
     {% block content %} {% endblock %}
     </div>
-    <!--<div class="banner-image">-->
-    <!--  <img src="../static/img/home-banner.jpg" alt="image of food platter" />-->
-    <!--</div>-->
     <footer class="footer">
         <div class="container">
             <div>&copy; Kevin Walton 2019</div>
-            <div>Contact <i class="material-icons">contact_mail</i></div>
+            <!--<div>Contact <i class="material-icons">contact_mail</i></div>-->
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

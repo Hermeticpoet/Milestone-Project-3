@@ -5,15 +5,43 @@ html, body {
 }
 
 body {
-    background: lightgreen;
+    /*background: lightgreen;*/
+    background-image: url("../img/home-banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
 }
 
+h1,h2,h3,h4,h5 {
+    /*color: #5d4037;*/
+    color: #fff;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -2;
+}
 
 .footer {
     background-color: #ee6e73;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 1rem;
+    color: #5d4037;
 }
 
 .footer .container {
-    display: flex;
-    justify-content: space-around;
+    text-align: center;
 }

@@ -10,16 +10,31 @@ app.config["SECRET_KEY"] = '9039e1a76014f85ad2fea4415a793bd8'
 app.config["MONGO_DBNAME"] = 'recipesApp'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
+
+#  Mongo Database Variable
+
 mongo = PyMongo(app)
 
+# recipes = mongo.db.recipes
+# cuisines = mongo.db.vegetarian
+# meal_type = mongo.db.ingredients
+# diet = mongo.db.diet
+# allergens = mongo.db.allergens
+# users = mongo.db.portion_sizes
+
+#  Landing Home Page
+
 @app.route("/")
-@app.route("/index")
+@app.route("/index", methods=["GET"])
 def index():
     return render_template("index.html", title="Home")
     
-@app.route("/get_recipes")
-def get_recipes():
-    return render_template("recipes.html", recipes=mongo.db.recipes.find())
+# All Recipes
+
+@app.route("/recipes")
+def recipes():
+    recipes = mongo.db.recipes.find()
+    return render_template('recipes.html', recipes=recipes)
     
 
 @app.route("/register", methods=["GET", "POST"])

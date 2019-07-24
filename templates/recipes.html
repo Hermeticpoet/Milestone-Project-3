@@ -1,11 +1,32 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% block content %}
+   <h1 class="title">Recipes</h1>
+   <div class="row recipe-cards">
     {% for recipe in recipes %}
-        {{ recipe.recipe_name }}
-        {{ recipe.cuisine_name }}
-        {{ recipe.dietary }}
-        {{ recipe.description }}
-        {{ recipe.chef_skillz }}
-        {{ recipe.img_url }}
-    {% endfor %}
+        <div class="col s12 recipe-card">
+            <div class="card">
+                <div class="card-heading">
+                    <div class="card-title">
+                        <h3><span id="recipe_name"><i><strong>{{recipe.recipe_name}}</i></strong></span></h3>
+                    </div>
+                </div>
+                <div class="card-image">
+                    <img src="{{ recipe.img_url }}">
+                </div>
+                <div class="card-body">
+                    <p id="short_description">{{ recipe.description }}</p>
+                </div>
+                <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab"><a href="#ingred">Ingredients</a></li>
+                    <li class="tab"><a class="active" href="#instruct">Instructions</a></li>
+                </ul>
+                </div>
+                <div class="card-content grey lighten-4">
+                  <div id="ingred">{{ recipe.ingredients }}</div>
+                  <div id="instruct">{{ recipe.instructions }}</div>
+                </div>
+        </div> 
+    </div>
+    {% endfor %}     
 {% endblock %}
