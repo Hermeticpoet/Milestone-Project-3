@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="card-image">
-                    <img src="{{ recipe.img_url }}" alt="pic of bolognese dish">
+                    <img class="materialboxed" src="{{ recipe.img_url }}" alt="pic of bolognese dish">
                 </div>
                 <div class="card-body">
                     <p id="short_description">{{ recipe.description }}</p>
@@ -24,10 +24,12 @@
                 </div>
                 <div class="card-content grey lighten-4">
                     <div id="ingred">
-                        {% for ing in recipe.ingredients %}
-                        <div class="ing-name-list">{{ ing.name }}</div>
-                        <div class="ing-qty-list">{{ ing.qty }}</div>
-                        {% endfor %}
+                        <ul>
+                            {% for ing in recipe.ingredients %}
+                            <li class="ing-list"><span class="ing-list-name">{{ ing.name }}</span><span class="ing-list-qty">{{ ing.qty }}</span></li>
+                            <hr/>
+                            {% endfor %}
+                        </ul>
                     </div>
                     <div id="instruct">
                         {% for instruct in recipe.instructions %}
@@ -43,7 +45,3 @@
     </div>
 
 {% endblock %}
-
-<!--{% for course in courses %}-->
-<!--    <img class="materialboxed" src="{{ course.img_url }}" alt="course pic">-->
-<!--{% endfor %}-->
