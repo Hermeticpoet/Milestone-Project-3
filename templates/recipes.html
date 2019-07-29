@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
    <h1 class="title">Recipes</h1>
-   <div class="row recipe-cards">
+    <div class="row recipe-cards">
     {% for recipe in recipes %}
         <div class="col s12 recipe-card">
             <div class="card">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="card-image">
-                    <img src="{{ recipe.img_url }}">
+                    <img src="{{ recipe.img_url }}" alt="pic of bolognese dish">
                 </div>
                 <div class="card-body">
                     <p id="short_description">{{ recipe.description }}</p>
@@ -23,10 +23,27 @@
                 </ul>
                 </div>
                 <div class="card-content grey lighten-4">
-                  <div id="ingred">{{ recipe.ingredients }}</div>
-                  <div id="instruct">{{ recipe.instructions }}</div>
+                    <div id="ingred">
+                        {% for ing in recipe.ingredients %}
+                        <div class="ing-name-list">{{ ing.name }}</div>
+                        <div class="ing-qty-list">{{ ing.qty }}</div>
+                        {% endfor %}
+                    </div>
+                    <div id="instruct">
+                        {% for instruct in recipe.instructions %}
+                         <ol>
+                             <li>{{ instruct.step }}</li>
+                         </ol>
+                        {% endfor %}
+                    </div>
                 </div>
-        </div> 
+            </div> 
+        </div>
+    {% endfor %} 
     </div>
-    {% endfor %}     
+
 {% endblock %}
+
+<!--{% for course in courses %}-->
+<!--    <img class="materialboxed" src="{{ course.img_url }}" alt="course pic">-->
+<!--{% endfor %}-->

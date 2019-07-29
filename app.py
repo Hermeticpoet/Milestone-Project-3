@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for, flash, jsonify
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from forms import RegistrationForm, LoginForm
@@ -20,21 +20,25 @@ mongo = PyMongo(app)
 # meal_type = mongo.db.ingredients
 # diet = mongo.db.diet
 # allergens = mongo.db.allergens
-# users = mongo.db.portion_sizes
+# users = mongo.db.users
 
 #  Landing Home Page
 
 @app.route("/")
 @app.route("/index", methods=["GET"])
 def index():
-    return render_template("index.html", title="Home")
+    cuisines = mongo.db.cuisines.find()
+    courses = mongo.db.meal_type.find()
+    
+    return render_template("index.html", title="Home", courses=courses, cuisines=cuisines) 
     
 # All Recipes
 
 @app.route("/recipes")
 def recipes():
     recipes = mongo.db.recipes.find()
-    return render_template('recipes.html', recipes=recipes)
+    courses = mongo.db.meal_type.find()
+    return render_template('recipes.html', title="All Recipes", recipes=recipes, courses=courses)
     
 
 @app.route("/register", methods=["GET", "POST"])
