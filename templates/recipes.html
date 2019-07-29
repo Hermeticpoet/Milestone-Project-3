@@ -15,6 +15,14 @@
                 </div>
                 <div class="card-body">
                     <p id="short_description">{{ recipe.description }}</p>
+                    <div class="diet-specs">
+                        <p>Dietary Specs: {{ recipe.dietary }}</p>
+                        <p>Allergens: {{ recipe.allergens[0] }}</p>
+                    </div>
+                    <div class="origin-skillz">
+                        <p>Origin of Cuisine: {{ recipe.cuisine_origin }}</p>
+                        <p>Chef Skillz: {{ recipe.chef_skillz }}</p>
+                    </div>
                 </div>
                 <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">
@@ -26,15 +34,15 @@
                     <div id="ingred">
                         <ul>
                             {% for ing in recipe.ingredients %}
-                            <li class="ing-list"><span class="ing-list-name">{{ ing.name }}</span><span class="ing-list-qty">{{ ing.qty }}</span></li>
-                            <hr/>
+                                <li class="ing-list"><span class="ing-list-name">{{ ing.name }}</span><span class="ing-list-qty">{{ ing.qty }}</span></li>
+                                <hr/>
                             {% endfor %}
                         </ul>
                     </div>
                     <div id="instruct">
                         {% for instruct in recipe.instructions %}
                          <ol>
-                             <li>{{ instruct.step }}</li>
+                             <li class="instructions-steps">{{ instruct.step }}</li>
                          </ol>
                         {% endfor %}
                     </div>
