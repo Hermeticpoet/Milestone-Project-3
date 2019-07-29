@@ -3,14 +3,14 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 
-.display-cards {
-    display: flex;
-    justify-content: space-between;
-}
+/*.display-cards {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
 
 
 
@@ -45,6 +45,20 @@ html, body {
     .diet-specs {
         display: flex;
         justify-content: space-around;
+    }
+    
+    .card.small .card-image {
+        max-height: 70% !important;
+    }
+    
+    .card .card-image img {
+        width: 100%;
+        max-height: 250px;
+    }
+    
+    .course-cards {
+        display: flex;
+        text-align: center;
     }
 }
 
