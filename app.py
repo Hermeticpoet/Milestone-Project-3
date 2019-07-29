@@ -40,6 +40,14 @@ def recipes():
     courses = mongo.db.meal_type.find()
     return render_template('recipes.html', title="All Recipes", recipes=recipes, courses=courses)
     
+# View Single Recipe
+
+@app.route("/view_recipe", methods=["GET"])
+def view_recipe():
+    recipes = mongo.db.recipes.find()
+    courses = mongo.db.meal_type.find()
+    return render_template('view_recipe.html', title="View Recipe", recipes=recipes, courses=courses)
+    
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
