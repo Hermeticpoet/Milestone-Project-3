@@ -148,8 +148,12 @@ body {
         font-size: var(--desk-font);
     }
     
-    .ing-list-qty, .instructions-steps {
+    .ing-list-qty {
         font-size: var(--desk-font);
+    }
+    
+    .instructions-steps {
+        font-size: 1.2rem;
     }
     
     /* End Recipe Displays */
