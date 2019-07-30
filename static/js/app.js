@@ -1,4 +1,4 @@
 $(document).ready(function(){
-    $('.sidenav').sidenav();
-    $('select').formSelect();
+    $('.sidenav').sideNav();
+    // $('select').formSelect();
 });
