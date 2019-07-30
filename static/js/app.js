@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.sidenav').sidenav();
+    $('.side-nav').sideNav();
     $('select').formSelect();
 });
   
