@@ -15,12 +15,6 @@ app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
 mongo = PyMongo(app)
 
-# recipes = mongo.db.recipes
-# cuisines = mongo.db.vegetarian
-# meal_type = mongo.db.ingredients
-# diet = mongo.db.diet
-# allergens = mongo.db.allergens
-# users = mongo.db.users
 
 #  Landing Home Page
 
