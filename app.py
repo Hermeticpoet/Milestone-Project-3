@@ -50,7 +50,7 @@ def view_recipe():
 
 # Add a New Recipe
 
-@app.route("/add_recipe", methods=["POST"])
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     '''
     User form generated that allows users to create their own recipes
