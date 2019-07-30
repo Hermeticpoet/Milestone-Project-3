@@ -1,10 +1,39 @@
+/******* Root Variables *******/
+
+:root {
+    --body-background: #eceff1;
+    --primary-font: cursive, sans-serif;
+    --secondary-font: Roboto, Ariel;
+    --component-color: #ba68c8;
+    --mob-font: 1rem;
+    --tab-font: 1.2rem;
+    --desk-font: 1.5rem;
+    --sm-h1-font: 1.5rem;
+    --sm-h2-font: 1.3rem;
+    --sm-h3-font: 1.2rem;
+    --lg-h1-font: 2.5rem;
+    --lg-h2-font: 2.3rem;
+    --lg-h3-font: 2.2rem;
+    --text-padding: 1rem;
+}
+
+/****** End Root Variables ******/
+
+/****** Layout Resets ******/
+
 html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Roboto, sans-serif;
-    font-size: 1.2rem;
+    font-family: var(--secondary-font);
+    font-size: var(--mob-font);
 }
+
+body {
+    background-color: var(--body-background);
+}
+
+/****** End Resets ******/
 
 
 .display-cards {
@@ -12,29 +41,41 @@ html, body {
     justify-content: space-between;
 }
 
+/**** Recipe Display Cards ****/
 
+#short_description {
+    padding: var(--text-padding);
+}
+
+/******* End Display Cards *******/
+
+
+/******* Tablet Screens *******/
 
 @media screen and (min-width: 768px) {
+    
+    /* Recipe Displays */
+    
     .ing-list {
-        padding: 1rem;
+        padding: var(--text-padding);
         display: flex;
         justify-content: space-between;
     }
     
     .ing-list-name {
         list-style-type: disc;
-        font-family: cursive, sans-serif;
-        font-size: 1.5rem;
+        font-family: var(--primary-font);
+        font-size: var(--tab-font);
     }
     
     .ing-list-qty {
-        font-family: cursive, sans-serif;
-        font-size: 2rem;
+        font-family: var(--primary-font);
+        font-size: var(--tab-font);
     }
     
     .instructions-steps {
-        font-family: cursive, sans-serif;
-        font-size: 1.2rem;
+        font-family: var(--primary-font);
+        font-size: var(--tab-font);
     }
     
     .origin-skillz {
@@ -46,5 +87,31 @@ html, body {
         display: flex;
         justify-content: space-around;
     }
+    /* End Recipe Displays */
 }
+
+/******* End Tablet Screens *******/
+
+/******* Desktop Screens & Bigger *******/
+
+@media screen and (min-width: 991px) {
+    
+    .ing-list-name {
+        list-style-type: disc;
+        font-family: var(--primary-font);
+        font-size: var(--desk-font);
+    }
+    
+    .ing-list-qty {
+        font-family: var(--primary-font);
+        font-size: var(--desk-font);
+    }
+    
+    .instructions-steps {
+        font-family: var(--primary-font);
+        font-size: var(--desk-font);
+    }
+}
+
+/******* End Desktop Screens *******/
 
