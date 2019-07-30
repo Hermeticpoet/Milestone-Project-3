@@ -1,4 +1,6 @@
 $(document).ready(function(){
-    $('.sidenav').sideNav();
-    // $('select').formSelect();
+    $('.sidenav').sidenav();
+    $(".dropdown-trigger").dropdown({ hover: false });
+    $('select').formSelect();
 });
+
