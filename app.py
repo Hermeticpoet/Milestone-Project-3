@@ -32,7 +32,7 @@ def index():
     
     return render_template("index.html", title="Home", courses=courses, cuisines=cuisines) 
     
-# All Recipes
+# View All Recipes
 
 @app.route("/recipes")
 def recipes():
@@ -47,6 +47,16 @@ def view_recipe():
     recipes = mongo.db.recipes.find()
     courses = mongo.db.meal_type.find()
     return render_template('view_recipe.html', title="View Recipe", recipes=recipes, courses=courses)
+
+# Add a New Recipe
+
+@app.route("/add_recipe", methods=["POST"])
+def add_recipe():
+    '''
+    User form generated that allows users to create their own recipes
+    and send them to the database to be stored
+    '''
+    return render_template('add_recipe.html', title="Add Recipe")
     
 
 @app.route("/register", methods=["GET", "POST"])
