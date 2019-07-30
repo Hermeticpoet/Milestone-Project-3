@@ -10,16 +10,25 @@
 <body>
     <div class="overlay"></div>
     <header>
+            <ul id="dropdown1" class="dropdown-content">
+              <li><a href="{{ url_for('recipes') }}">All Recipes</a></li>
+              <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+              <li><a href="#!">Edit Recipe</a></li>
+              <li class="divider"></li>
+              <li><a href="#!">Delete Recipe</a></li>
+            </ul>
             <nav>
                 <div class="container">
                     <div class="nav-wrapper">
                         <a href="{{ url_for('index') }}" class="brand-logo">What2Eat</a>
                         <a href="{{ url_for('index') }}" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                             <li><a href="{{ url_for('index') }}">Home</a></li>
-                            <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
                             <li><a href="{{ url_for('login') }}">Login</a></li>
                             <li><a href="{{ url_for('register') }}">Register</a></li>
+                            <!-- Dropdown Trigger -->
+                            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Recipes<i class="material-icons right">arrow_drop_down</i></a></li>
                         </ul>
                         <ul class="side-nav" id="mobile-demo">
                             <li><a href="{{ url_for('index') }}">Home</a></li>

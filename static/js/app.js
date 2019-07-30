@@ -1,9 +1,5 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
-    // $('.carousel').carousel();
+    $(".dropdown-trigger").dropdown({ hover: false });
 });
   
-// document.addEventListener('DOMContentLoaded', function() {
-//     var elems = document.querySelectorAll('.sidenav');
-//     var instances = M.Sidenav.init(elems, options);
-// });
