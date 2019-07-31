@@ -1,40 +1,92 @@
+/******* Root Variables *******/
+
+:root {
+    --body-background: #eceff1;
+    --primary-font: cursive, sans-serif;
+    --secondary-font: Roboto, Ariel;
+    --component-color: #ba68c8;
+    --card-text: #ccc;
+    --mob-font: 1rem;
+    --tab-font: 1.2rem;
+    --desk-font: 1.5rem;
+    --sm-h1-font: 1.5rem;
+    --sm-h2-font: 1.3rem;
+    --sm-h3-font: 1.2rem;
+    --md-h1-font: 2rem;
+    --md-h2-font: 1.8rem;
+    --md-h3-font: 1.6rem;
+    --lg-h1-font: 2.5rem;
+    --lg-h2-font: 2.3rem;
+    --lg-h3-font: 2.2rem;
+    --text-padding: 1rem;
+}
+
+/****** End Root Variables ******/
+
+/****** Layout Resets ******/
+
 html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Roboto, sans-serif;
-    font-size: 1.2rem;
+    font-family: var(--primary-font);
+    font-size: var(--mob-font);
 }
 
-
-.display-cards {
-    display: flex;
-    justify-content: space-between;
+body {
+    background-color: var(--body-background);
 }
 
+/****** End Resets ******/
 
+/**** Recipe Display Cards ****/
+
+#short_description {
+    padding: var(--text-padding);
+}
+
+/******* End Display Cards *******/
+
+
+/******* Tablet Screens *******/
 
 @media screen and (min-width: 768px) {
+    
+    html {
+        font-size: var(--tab-font);
+    }
+    
+    /* Headings Font Sizes */
+    
+    h1 {
+        font-size: var(--md-h1-font);
+    }
+    
+    h2 {
+        font-size: var(--md-h2-font);
+    }
+    
+    h3 {
+        font-size: var(--md-h3-font);
+    }
+    
+    /* End of Headings */
+    
+    /* Recipe Displays */
+    
     .ing-list {
-        padding: 1rem;
+        padding: 0 var(--text-padding);
         display: flex;
         justify-content: space-between;
     }
     
     .ing-list-name {
         list-style-type: disc;
-        font-family: cursive, sans-serif;
-        font-size: 1.5rem;
+        font-size: var(--tab-font);
     }
     
-    .ing-list-qty {
-        font-family: cursive, sans-serif;
-        font-size: 2rem;
-    }
-    
-    .instructions-steps {
-        font-family: cursive, sans-serif;
-        font-size: 1.2rem;
+    .ing-list-qty, .instructions-steps {
+        font-size: var(--tab-font);
     }
     
     .origin-skillz {
@@ -46,5 +98,67 @@ html, body {
         display: flex;
         justify-content: space-around;
     }
+    
+    .card.small .card-image {
+        max-height: 70% !important;
+    }
+    
+    .card .card-image img {
+        width: 100%;
+        max-height: 250px;
+    }
+    
+    .course-cards {
+        display: flex;
+        text-align: center;
+    }
+
+    /* End Recipe Displays */
 }
+
+/******* End Tablet Screens *******/
+
+/******* Desktop Screens & Bigger *******/
+
+@media screen and (min-width: 991px) {
+    
+    html {
+        font-size: var(--desk-font);
+    }
+    
+    /* Headings Font Sizes */
+    
+    h1 {
+        font-size: var(--lg-h1-font);
+    }
+    
+    h2 {
+        font-size: var(--lg-h2-font);
+    }
+    
+    h3 {
+        font-size: var(--lg-h3-font);
+    }
+    
+    /* End of Headings */
+    
+    /* Recipe Displays */
+    
+    .ing-list-name {
+        list-style-type: disc;
+        font-size: var(--desk-font);
+    }
+    
+    .ing-list-qty {
+        font-size: var(--desk-font);
+    }
+    
+    .instructions-steps {
+        font-size: 1.2rem;
+    }
+    
+    /* End Recipe Displays */
+}
+
+/******* End Desktop Screens *******/
 

@@ -106,6 +106,11 @@ GIT was used throughout the development process for saving versions of my code b
 ### User Tests
 
 #### Bugs
+I had constant issues with the jQuery for Materialize not recognizing the functions needed to make the sidenav or select dropdowns for
+the add recipes form to work. When I initially built the sidenav, it worked fine. Therefore, I had not tested it again till after a long
+way further down the road, by which time I noticed it was no longer working and giving an error. I rechecked my code in Materialize docs
+and tried to use the suggested vanilla js instead but that too would not work. I checked to make sure the jQuery and JS dependencies for
+Materialize were still loading before my JS script but they were fine. I have posted queries to Slack to assist with this issue?
 
 ## Deployment
 

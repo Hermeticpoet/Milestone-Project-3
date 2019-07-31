@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    $('.side-nav').sideNav();
-    $('select').formSelect();
+    $(".button-collapse").sideNav();
+    $('.collapsible').collapsible();
+    $(".dropdown-trigger").dropdown({ hover: false });
+    $('select').material_select();
 });
-  
+
