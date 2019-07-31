@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.sidenav').sidenav();
+    $('.button-collapse').sidenav();
     $(".dropdown-trigger").dropdown({ hover: false });
     $('select').formSelect();
 });
