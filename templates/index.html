@@ -4,7 +4,7 @@
   <ul class="collapsible">
   {% for cuisine in cuisines %}
     <li>
-      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>{{ cuisine.origin }}</div>
+      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i><span class="cuisine-titles">{{ cuisine.origin }}</span></div>
       <div class="collapsible-body">
           <h3>Courses:</h3><hr />
           <div class="home-accordian">

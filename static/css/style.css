@@ -39,14 +39,29 @@ body {
 
 /****** End Resets ******/
 
+
 /**** Recipe Display Cards ****/
 
 #short_description {
     padding: var(--text-padding);
 }
 
+
 /******* End Display Cards *******/
 
+
+/******* Index Page Accordian *******/
+
+.cuisine-titles {
+    margin-left: 5.5rem;
+    text-transform: capitalize;
+}
+
+/*.material-icons {*/
+/*    margin-right: 1.5rem;*/
+/*}*/
+
+/******* End Accordian *******/
 
 /******* Tablet Screens *******/
 
@@ -110,6 +125,7 @@ body {
     
     .course-cards {
         display: flex;
+        justify-content: space-between;
         text-align: center;
     }
 
