@@ -9,8 +9,9 @@
           <h3>Courses:</h3><hr />
           <div class="home-accordian">
             <div class="row course-cards">
+              {% for course in courses %}
               <div class="col s12 m6 l3">
-                {% for course in courses %}
+                
                 <div class="card small">
                   <div class="card-image">
                     <img class="responsive-img" src="{{ course.img_url }}">
@@ -22,8 +23,9 @@
                     <a href="#">See Options</a>
                   </div>
                 </div>
-                {% endfor %}
+                
               </div>
+              {% endfor %}
             </div>
           </div>
       </div>
