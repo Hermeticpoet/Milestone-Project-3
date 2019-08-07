@@ -39,6 +39,23 @@ body {
 
 /****** End Resets ******/
 
+/***** Index Page Heading Block ******/
+
+.index-head {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    display: inline-block !important;
+}
+
+.add-btn {
+    margin-left: 11rem;
+}
+
+/***** End Heading Block ******/
+
 
 /**** Recipe Display Cards ****/
 
@@ -136,7 +153,7 @@ body {
 
 /******* Desktop Screens & Bigger *******/
 
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 1025px) {
     
     html {
         font-size: var(--desk-font);

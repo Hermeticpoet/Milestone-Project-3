@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h1>Choose Your Cuisine</h1>
+<div class="index-head">
+  <h1>Choose Your Cuisine</h1> 
+  <button class="add-btn"><a href="{{ url_for('add_recipe') }}"><i class="material-icons">add</i>Add Recipe</a></button>
+</div>
   <ul class="collapsible">
   {% for cuisine in cuisines %}
     <li>
