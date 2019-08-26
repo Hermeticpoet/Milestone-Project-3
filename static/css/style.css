@@ -12,8 +12,8 @@
     --sm-h1-font: 1.5rem;
     --sm-h2-font: 1.3rem;
     --sm-h3-font: 1.2rem;
-    --md-h1-font: 2rem;
-    --md-h2-font: 1.8rem;
+    --md-h1-font: 1.8rem;
+    --md-h2-font: 1.75rem;
     --md-h3-font: 1.6rem;
     --lg-h1-font: 2.5rem;
     --lg-h2-font: 2.3rem;
@@ -153,7 +153,7 @@ h1 {
 
 /******* Desktop Screens & Bigger *******/
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1200px) {
     
     html {
         font-size: var(--desk-font);
