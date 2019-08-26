@@ -18,13 +18,22 @@ mongo = PyMongo(app)
 
 #  Landing Home Page
 
+# @app.route("/")
+# @app.route("/index", methods=["GET"])
+# def index():
+#     cuisines = mongo.db.cuisines.find()
+#     courses = mongo.db.meal_type.find()
+    
+#     return render_template("index.html", title="Home", courses=courses, cuisines=cuisines) 
+
 @app.route("/")
 @app.route("/index", methods=["GET"])
 def index():
     cuisines = mongo.db.cuisines.find()
     courses = mongo.db.meal_type.find()
     
-    return render_template("index.html", title="Home", courses=courses, cuisines=cuisines) 
+    return render_template("nested_loop.html", title="Home", courses=courses, cuisines=cuisines) 
+
     
 # View All Recipes
 
