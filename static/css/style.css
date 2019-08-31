@@ -70,12 +70,25 @@ h1 {
 /******* Index Page Accordian *******/
 
 .cuisine-titles {
-    margin-left: 5.5rem;
+    margin-left: 8rem;
+    margin-right: auto;
     text-transform: capitalize;
 }
 
+/******* Footer ********/
+
+.footer .container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/******* End Footer ********/
+
 /*.material-icons {*/
-/*    margin-right: 1.5rem;*/
+/*    margin-left: 2rem;*/
 /*}*/
 
 /******* End Accordian *******/
