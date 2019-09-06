@@ -37,9 +37,10 @@ def recipes():
     
 # View Single Recipe
 
-@app.route("/view_recipe", methods=["GET"])
-def view_recipe():
+@app.route("/view_recipe/<recipe_id>", methods=["GET"])
+def view_recipe(recipe_id):
     recipes = mongo.db.recipes.find()
+    recipe = mongo.db.recipes.find_one({ '_id':ObjectId(recipe_id) })
     courses = mongo.db.meal_type.find()
     return render_template('view_recipe.html', title="View Recipe", recipes=recipes, courses=courses)
 
@@ -51,23 +52,22 @@ def add_recipe():
     User form generated that allows users to create their own recipes
     and send them to the database to be stored
     '''
-    form = request.form
-    if form.validate_on_submit():
+    # form = request.form
+    if request.method == "POST":
         recipes = mongo.db.recipes
         recipes.insert_one({
-            "author": request.form['author'],
+            "created_by": request.form['created_by'],
             "recipe_name": request.form['recipe_name'],
             "description": request.form['description'],
             "ingredients": request.form['ingredients'],
             "instructions": request.form['instructions'],
-            "cuisine": request.form['cuisine'],
-            "dietary": request.form['dietary'],
-            "course": request.form['course'],
-            "chef_skillz": request.form['skills'],
+            "cuisine_origin": request.form['cuisine_origin'],
+            "dietary_name": request.form['dietary_name'],
+            "course_name": request.form['course_name'],
+            "chef_skillz": request.form['chef_skillz'],
             "allergens": request.form['allergens']
         })
-        return redirect(url_for("index", flash="Recipe added"))
-    return render_template("add_recipe.html", title="Add Recipe", form=form)
+    return render_template("add_recipe.html", title="Add Recipe")
     
 
 @app.route("/register", methods=["GET", "POST"])
