@@ -51,7 +51,23 @@ def add_recipe():
     User form generated that allows users to create their own recipes
     and send them to the database to be stored
     '''
-    return render_template('add_recipe.html', title="Add Recipe")
+    form = request.form
+    if form.validate_on_submit():
+        recipes = mongo.db.recipes
+        recipes.insert_one({
+            "author": request.form['author'],
+            "recipe_name": request.form['recipe_name'],
+            "description": request.form['description'],
+            "ingredients": request.form['ingredients'],
+            "instructions": request.form['instructions'],
+            "cuisine": request.form['cuisine'],
+            "dietary": request.form['dietary'],
+            "course": request.form['course'],
+            "chef_skillz": request.form['skills'],
+            "allergens": request.form['allergens']
+        })
+        return redirect(url_for("index", flash="Recipe added"))
+    return render_template("add_recipe.html", title="Add Recipe", form=form)
     
 
 @app.route("/register", methods=["GET", "POST"])

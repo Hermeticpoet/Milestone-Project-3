@@ -10,7 +10,8 @@
       <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i><span class="cuisine-titles">{{ cuisine.origin }}</span><i class="material-icons">
 local_dining</i></div>
       <div class="collapsible-body">
-          <h3><a href="{{ url_for('recipes') }}">See Options</a></h3><hr />
+        <img id='accordian-img' src="{{ url_for('static', filename='img/home-banner.jpg') }}" alt='food pic'>
+        <h3><a href="{{ url_for('recipes') }}">Full Menu Options</a></h3><hr />
       </div>
     </li>
   {% endfor %}
