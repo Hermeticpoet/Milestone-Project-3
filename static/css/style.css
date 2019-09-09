@@ -51,11 +51,20 @@ h1 {
 }
 
 .add-btn {
-    margin-left: 11rem;
+    margin-left: 13rem;
 }
 
 /***** End Heading Block ******/
 
+/***** Message Alert ******/
+
+.alert {
+    margin-top: 10px;
+    background-color: yellow;
+    color: red !important;
+}
+
+/***** End Message Alert ******/
 
 /**** Recipe Display Cards ****/
 

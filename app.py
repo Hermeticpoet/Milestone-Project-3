@@ -37,12 +37,12 @@ def recipes():
     
 # View Single Recipe
 
-@app.route("/view_recipe/<recipe_id>", methods=["GET"])
+@app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
 def view_recipe(recipe_id):
     recipes = mongo.db.recipes.find()
     recipe = mongo.db.recipes.find_one({ '_id':ObjectId(recipe_id) })
     courses = mongo.db.meal_type.find()
-    return render_template('view_recipe.html', title="View Recipe", recipes=recipes, courses=courses)
+    return render_template('view_recipe.html', title="View Recipe", recipes=recipes, courses=courses, recipe=recipe)
 
 # Add a New Recipe
 
@@ -52,7 +52,6 @@ def add_recipe():
     User form generated that allows users to create their own recipes
     and send them to the database to be stored
     '''
-    # form = request.form
     if request.method == "POST":
         recipes = mongo.db.recipes
         recipes.insert_one({
@@ -69,6 +68,12 @@ def add_recipe():
         })
     return render_template("add_recipe.html", title="Add Recipe")
     
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    """ allowing users to delete recipes easily with a click of a button"""
+    db.recipes.delete_one({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('index'))
+    
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -76,7 +81,7 @@ def register():
     # Validate Form Entry
     if form.validate_on_submit():
         flash(f'Account created for { form.username.data }!')
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
     return render_template("register.html", title="Register", form=form)
     
 
@@ -85,7 +90,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         if form.email.data == 'admin@yahoo.com' and form.password.data == 'password':
-            flash("You have been successfully logged in")
+            flash(f"You have been successfully logged in")
             return redirect(url_for('index'))
         else:
             flash("Login Failed, please check username & password")
