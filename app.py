@@ -12,12 +12,10 @@ app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
 
 #  Mongo Database Variable
-
 mongo = PyMongo(app)
 
 
 #  Landing Home Page
-
 @app.route("/")
 @app.route("/index", methods=["GET"])
 def index():
@@ -28,7 +26,6 @@ def index():
 
     
 # View All Recipes
-
 @app.route("/recipes")
 def recipes():
     recipes = mongo.db.recipes.find()
@@ -36,7 +33,6 @@ def recipes():
     return render_template('recipes.html', title="All Recipes", recipes=recipes, courses=courses)
     
 # View Single Recipe
-
 @app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
 def view_recipe(recipe_id):
     recipes = mongo.db.recipes.find()
@@ -45,7 +41,6 @@ def view_recipe(recipe_id):
     return render_template('view_recipe.html', title="View Recipe", recipes=recipes, courses=courses, recipe=recipe)
 
 # Add a New Recipe
-
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     '''
@@ -75,6 +70,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for('index'))
     
 
+# Route for Registration
 @app.route("/register", methods=["GET", "POST"])
 def register():
     form = RegistrationForm()
@@ -85,6 +81,7 @@ def register():
     return render_template("register.html", title="Register", form=form)
     
 
+# Login Route
 @app.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()

@@ -120,6 +120,15 @@ h3 {
 
 /******* End Accordian *******/
 
+/****** Forms *******/
+
+.helper-text {
+    color: red;
+    font-weight: bold;
+}
+
+/**** End Forms *****/
+
 /******* Tablet Screens *******/
 
 @media screen and (min-width: 768px) {
