@@ -29,8 +29,9 @@ def index():
 @app.route("/recipes")
 def recipes():
     recipes = mongo.db.recipes.find()
-    courses = mongo.db.meal_type.find()
-    return render_template('recipes.html', title="All Recipes", recipes=recipes, courses=courses)
+    # courses = mongo.db.meal_type.find()
+    
+    return render_template('recipes.html', title="All Recipes", recipes=recipes)
     
 # View Single Recipe
 @app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
