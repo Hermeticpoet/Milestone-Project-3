@@ -14,7 +14,7 @@
                     <img class="materialboxed" src="{{ recipe.img_url }}" alt="pic of bolognese dish">
                 </div>
                 <div class="card-body">
-                    <p id="short_description">{{ recipe.description }}<br><a href="{{ url_for('view_recipe') }}">See More...</a></p>
+                    <p id="short_description">{{ recipe.description }}<br><a href="{{ url_for('view_recipe', recipe_id=recipe_id) }}">See More...</a></p>
                     <div class="diet-specs">
                         <p>Dietary Specs: {{ recipe.dietary }}</p>
                         <p>Allergens: {{ recipe.allergens[0] }}</p>

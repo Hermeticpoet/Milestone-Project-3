@@ -26,20 +26,22 @@ def index():
 
     
 # View All Recipes
-@app.route("/recipes")
-def recipes():
+@app.route("/recipes", methods=["GET"])
+def all_recipes():
     recipes = mongo.db.recipes.find()
-    # courses = mongo.db.meal_type.find()
+    courses = mongo.db.meal_type.find()
     
-    return render_template('recipes.html', title="All Recipes", recipes=recipes)
+    return render_template("recipes.html", title="All Recipes", courses=courses, recipes=recipes)
     
-# View Single Recipe
-@app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
+# # View Single Recipe
+@app.route("/view_recipe/<recipe_id>", methods=["GET"])
 def view_recipe(recipe_id):
     recipes = mongo.db.recipes.find()
-    recipe = mongo.db.recipes.find_one({ '_id':ObjectId(recipe_id) })
+    recipe = mongo.db.recipes.find_one({ "_id":ObjectId(recipe_id) })
     courses = mongo.db.meal_type.find()
-    return render_template('view_recipe.html', title="View Recipe", recipes=recipes, courses=courses, recipe=recipe)
+    
+    return render_template("view_recipe.html", title="View Recipe", recipes=recipes, courses=courses, recipe=recipe)
+
 
 # Add a New Recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -64,10 +66,11 @@ def add_recipe():
         })
     return render_template("add_recipe.html", title="Add Recipe")
     
-@app.route('/delete_recipe/<recipe_id>')
+@app.route('/delete_recipe/<recipe_id>', methods=["GET", "POST"])
 def delete_recipe(recipe_id):
     """ allowing users to delete recipes easily with a click of a button"""
-    db.recipes.delete_one({'_id': ObjectId(recipe_id)})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     return redirect(url_for('index'))
     
 
