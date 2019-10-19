@@ -7,7 +7,7 @@
   <ul class="collapsible">
   {% for cuisine in cuisines %}
     <li>
-      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i><span class="cuisine-titles">{{ cuisine.origin }}</span><i class="material-icons">
+      <div class="collapsible-header" id="burger"><i class="material-icons">arrow_drop_down</i><span class="cuisine-titles">{{ cuisine.origin }}</span><i class="material-icons">
 local_dining</i></div>
       <div class="collapsible-body">
         <img id='accordian-img'src="{{ url_for('static', filename='img/home-banner.jpg') }}" alt='food pic'>

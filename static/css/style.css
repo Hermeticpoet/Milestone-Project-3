@@ -48,10 +48,13 @@ body {
 
 h1 {
     display: inline-block !important;
+    font-size: 2rem;
+    color: #ccc;
 }
 
 .add-btn {
     margin-left: 13rem;
+    color: #ccc;
 }
 
 /***** End Heading Block ******/
@@ -72,6 +75,13 @@ h1 {
     padding: var(--text-padding);
 }
 
+.add-btn {
+    background-color: brown;
+    border-radius: 10px;
+    padding: 5px;
+    color: #ccc;
+}
+
 .collapsible-body {
     display: flex;
     flex-direction: column;
@@ -79,9 +89,21 @@ h1 {
     background-color: brown;
 }
 
-/*.collapsible-body::nth-child(1) {*/
-/*    background-color: brown;*/
-/*}*/
+ul > li > #burger {
+    background-color: #4d2e00 !important;
+}
+
+ul > li > #burger:first-of-type {
+    background-color: #ffcc80 !important;
+    border-top-right-radius: 25px !important;
+    border-top-left-radius: 25px !important;
+}
+
+ul > li > #burger:last-of-type {
+    background-color: #ffcc80 !important;
+    border-bottom-right-radius: 25px !important;
+    border-bottom-left-radius: 25px !important;
+}
 
 h3 {
     font-size: var(--lg-h3-font);
