@@ -21,7 +21,6 @@ mongo = PyMongo(app)
 def index():
     cuisines = mongo.db.cuisines.find()
     courses = mongo.db.meal_type.find()
-    
     return render_template("index.html", title="Home", courses=courses, cuisines=cuisines) 
 
     
@@ -30,7 +29,6 @@ def index():
 def all_recipes():
     recipes = mongo.db.recipes.find()
     courses = mongo.db.meal_type.find()
-    
     return render_template("recipes.html", title="All Recipes", courses=courses, recipes=recipes)
     
 # # View Single Recipe
@@ -39,7 +37,6 @@ def view_recipe(recipe_id):
     recipes = mongo.db.recipes.find()
     recipe = mongo.db.recipes.find_one({ "_id":ObjectId(recipe_id) })
     courses = mongo.db.meal_type.find()
-    
     return render_template("view_recipe.html", title="View Recipe", recipes=recipes, courses=courses, recipe=recipe)
 
 
