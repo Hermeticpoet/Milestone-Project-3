@@ -14,7 +14,7 @@
                     <img class="materialboxed" src="{{ recipe.img_url }}" alt="pic of bolognese dish">
                 </div>
                 <div class="card-body">
-                    <p id="short_description">{{ recipe.description }}<br><a href="{{ url_for('view_recipe') }}">See More...</a></p>
+                    <p id="short_description">{{ recipe.description }}<br><a href="{{ url_for('view_recipe', recipe_id=recipe_id) }}">See More...</a></p>
                     <div class="diet-specs">
                         <p>Dietary Specs: {{ recipe.dietary }}</p>
                         <p>Allergens: {{ recipe.allergens[0] }}</p>
@@ -24,29 +24,29 @@
                         <p>Chef Skillz: {{ recipe.chef_skillz }}</p>
                     </div>
                 </div>
-                <!--<div class="card-tabs">-->
-                <!--<ul class="tabs tabs-fixed-width">-->
-                <!--    <li class="tab"><a href="#ingred">Ingredients</a></li>-->
-                <!--    <li class="tab"><a class="active" href="#instruct">Instructions</a></li>-->
-                <!--</ul>-->
-                <!--</div>-->
-                <!--<div class="card-content grey lighten-4">-->
-                <!--    <div id="ingred">-->
-                <!--        <ul>-->
-                <!--            {% for ing in recipe.ingredients %}-->
-                <!--                <li class="ing-list"><span class="ing-list-name">{{ ing.name }}</span><span class="ing-list-qty">{{ ing.qty }}</span></li>-->
-                <!--                <hr/>-->
-                <!--            {% endfor %}-->
-                <!--        </ul>-->
-                <!--    </div>-->
-                <!--    <div id="instruct">-->
-                <!--        {% for instruct in recipe.instructions %}-->
-                <!--         <ol>-->
-                <!--             <li class="instructions-steps">{{ instruct.step }}</li>-->
-                <!--         </ol>-->
-                <!--        {% endfor %}-->
-                <!--    </div>-->
-                <!--</div>-->
+                <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab"><a href="#ingred">Ingredients</a></li>
+                    <li class="tab"><a class="active" href="#instruct">Instructions</a></li>
+                </ul>
+                </div>
+                <div class="card-content grey lighten-4">
+                    <div id="ingred">
+                        <ul>
+                            {% for ing in recipe.ingredients %}
+                                <li class="ing-list"><span class="ing-list-name">{{ ing.name }}</span><span class="ing-list-qty">{{ ing.qty }}</span></li>
+                                <hr/>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div id="instruct">
+                        {% for instruct in recipe.instructions %}
+                         <ol>
+                             <li class="instructions-steps">{{ instruct.step }}</li>
+                         </ol>
+                        {% endfor %}
+                    </div>
+                </div>
             </div> 
         </div>
     {% endfor %} 

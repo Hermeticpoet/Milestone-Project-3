@@ -1,31 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h1>Choose Your Cuisine</h1>
+<div class="index-head">
+  <h1>Choose Your Cuisine</h1> 
+  <button class="add-btn"><a href="{{ url_for('add_recipe') }}"><i class="material-icons">add</i>Add Recipe</a></button>
+</div>
   <ul class="collapsible">
   {% for cuisine in cuisines %}
     <li>
-      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>{{ cuisine.origin }}</div>
+      <div class="collapsible-header" id="burger"><i class="material-icons">arrow_drop_down</i><span class="cuisine-titles">{{ cuisine.origin }}</span><i class="material-icons">
+local_dining</i></div>
       <div class="collapsible-body">
-          <h3>Courses:</h3><hr />
-          <div class="home-accordian">
-            <div class="row course-cards">
-              <div class="col s12 m6 l3">
-                {% for course in courses %}
-                <div class="card small">
-                  <div class="card-image">
-                    <img class="responsive-img" src="{{ course.img_url }}">
-                  </div>
-                  <div class="card-content">
-                    <p>{{ course.course_name }}</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">See Options</a>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
+        <img id='accordian-img'src="{{ url_for('static', filename='img/home-banner.jpg') }}" alt='food pic'>
+        <h3><a href="{{ url_for('all_recipes') }}">Full Menu Options</a></h3><hr />
       </div>
     </li>
   {% endfor %}
