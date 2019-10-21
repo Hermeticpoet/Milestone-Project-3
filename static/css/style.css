@@ -76,34 +76,35 @@ h1 {
 }
 
 .add-btn {
-    background-color: brown;
+    background-color: #ee6e73;
     border-radius: 10px;
     padding: 5px;
-    color: #fff !important;
+    color: #fff;
 }
 
 .collapsible-body {
     display: flex;
     flex-direction: column;
     align-content: center;
-    background-color: brown;
+    background-color: #ee6e73;
 }
 
-ul > li > #burger {
-    background-color: #4d2e00 !important;
+#burger {
+    background-color: #4d2e00;
 }
 
-ul > li > #burger:first-of-type {
-    background-color: #ffcc80 !important;
-    border-top-right-radius: 25px !important;
-    border-top-left-radius: 25px !important;
+.collapsible > li:firt-of-type {
+    background-color: #ffcc80;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-ul > li > #burger:last-of-type {
-    background-color: #ffcc80 !important;
-    border-bottom-right-radius: 25px !important;
-    border-bottom-left-radius: 25px !important;
+.collapsible > li:last-of-type {
+    background-color: #ffcc80;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
+
 
 h3 {
     font-size: var(--lg-h3-font);

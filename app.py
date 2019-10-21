@@ -80,7 +80,6 @@ def register():
         flash(f'Account created for { form.username.data }!')
         return redirect(url_for('login'))
     return render_template("register.html", title="Register", form=form)
-    
 
 # Login Route
 @app.route("/login", methods=["GET", "POST"])
